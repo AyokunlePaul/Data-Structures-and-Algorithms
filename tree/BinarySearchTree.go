@@ -12,13 +12,32 @@ func NewBST(value int) *BinarySearchTree {
 	}
 }
 
-func (bst *BinarySearchTree) insert(value int) {
+func (bst *BinarySearchTree) Insert(value int) {
 	bst.Root.insert(value)
 }
 
-func (bst *BinarySearchTree) traverseInOrder() {
+func (bst *BinarySearchTree) Get(value int) *Node {
+	if bst.Root != nil {
+		return bst.Root.get(value)
+	}
+	return nil
+}
+
+func (bst *BinarySearchTree) TraverseInOrder() {
 	if bst.Root != nil {
 		bst.Root.traverseInOrder()
+	}
+}
+
+func (bst *BinarySearchTree) TraversPreOrder() {
+	if bst.Root != nil {
+		bst.Root.traversePreOrder()
+	}
+}
+
+func (bst *BinarySearchTree) TraversePostOrder() {
+	if bst.Root != nil {
+		bst.Root.traversePostOrder()
 	}
 }
 
